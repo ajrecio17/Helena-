@@ -216,6 +216,15 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* Glow text effect for navigation */
+.glow-text {
+    animation: glow 3s ease-in-out infinite;
+    text-shadow: 
+        0 0 10px var(--helena-pink),
+        0 0 20px var(--helena-pink),
+        0 0 30px var(--helena-magenta);
+}
+
 /* Pink accent divider */
 .accent-line {
     height: 3px;
