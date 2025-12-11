@@ -222,7 +222,8 @@ nav a:hover::after {
     text-shadow: 
         0 0 10px var(--helena-pink),
         0 0 20px var(--helena-pink),
-        0 0 30px var(--helena-magenta);
+        0 0 30px var(--helena-magenta),
+        0 0 40px var(--helena-pink);
 }
 
 /* Pink accent divider */
