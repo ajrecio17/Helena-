@@ -273,6 +273,47 @@ input:focus, textarea:focus, select:focus {
     background-color: rgba(255, 20, 147, 0.1) !important;
 }
 
+/* Dropdown select styling */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ff1493' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    padding-right: 36px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    cursor: pointer !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Dropdown options styling */
+select option {
+    background-color: var(--helena-dark) !important;
+    color: var(--helena-cream) !important;
+    padding: 10px !important;
+    border: 1px solid var(--helena-magenta) !important;
+}
+
+select option:hover {
+    background: linear-gradient(135deg, var(--helena-pink), var(--helena-magenta)) !important;
+    color: white !important;
+}
+
+select option:checked {
+    background: linear-gradient(135deg, var(--helena-pink), var(--helena-magenta)) !important;
+    color: white !important;
+}
+
+/* Firefox dropdown styling */
+select option:focus {
+    background: linear-gradient(135deg, var(--helena-pink), var(--helena-magenta)) !important;
+    color: white !important;
+    outline: 2px solid var(--helena-pink) !important;
+}
+
 /* Button styling */
 .btn-helena {
     background: linear-gradient(135deg, var(--helena-pink), var(--helena-magenta));
