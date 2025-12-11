@@ -1,0 +1,468 @@
+/* Helena• Musicians Website Styles */
+
+/* Custom color definitions */
+:root {
+    --helena-dark: #1a0f15;
+    --helena-pink: #ff1493;
+    --helena-magenta: #c4004c;
+    --helena-gold: #d4af37;
+    --helena-cream: #f5f0e8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--helena-dark);
+    color: var(--helena-cream);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gradient background effect */
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(196, 0, 76, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Neon Helena Logo */
+.helena-logo {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Neon circle */
+.neon-circle {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--helena-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--helena-pink), inset 0 0 20px rgba(255, 20, 147, 0.2);
+    flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Neon text styling */
+.helena-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: var(--helena-cream);
+    text-shadow: 
+        0 0 10px var(--helena-pink),
+        0 0 20px var(--helena-pink),
+        0 0 30px var(--helena-pink),
+        0 0 40px var(--helena-magenta);
+    display: inline-block;
+    animation: glow 3s ease-in-out infinite;
+}
+
+.helena-underline {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--helena-pink), transparent);
+    margin-top: 10px;
+    animation: slideIn 1.2s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px var(--helena-pink), inset 0 0 20px rgba(255, 20, 147, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px var(--helena-pink), inset 0 0 30px rgba(255, 20, 147, 0.4);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px var(--helena-pink),
+            0 0 20px var(--helena-pink),
+            0 0 30px var(--helena-pink),
+            0 0 40px var(--helena-magenta);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px var(--helena-pink),
+            0 0 30px var(--helena-pink),
+            0 0 40px var(--helena-pink),
+            0 0 60px var(--helena-magenta);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Navigation */
+nav {
+    background-color: rgba(26, 15, 21, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 20, 147, 0.1);
+}
+
+nav a {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--helena-pink);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--helena-pink);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Pink accent divider */
+.accent-line {
+    height: 3px;
+    background: linear-gradient(to right, var(--helena-pink), transparent);
+    margin: 2rem 0;
+}
+
+/* Service card hover effect */
+.service-card {
+    border: 2px solid var(--helena-magenta);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 20, 147, 0.05);
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.service-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.service-card:hover {
+    border-color: var(--helena-pink);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
+    transform: translateY(-5px);
+}
+
+.service-card-icon {
+    background: linear-gradient(135deg, var(--helena-pink), var(--helena-magenta));
+    animation: scaleIn 0.6s ease-out;
+}
+
+/* Form styling */
+input, textarea, select {
+    background-color: rgba(255, 20, 147, 0.05) !important;
+    border: 2px solid var(--helena-magenta) !important;
+    color: var(--helena-cream) !important;
+    transition: all 0.3s ease !important;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(245, 240, 232, 0.5) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--helena-pink) !important;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.3) !important;
+    outline: none !important;
+    background-color: rgba(255, 20, 147, 0.1) !important;
+}
+
+/* Button styling */
+.btn-helena {
+    background: linear-gradient(135deg, var(--helena-pink), var(--helena-magenta));
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-helena::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-helena:hover::before {
+    left: 100%;
+}
+
+.btn-helena:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+}
+
+.btn-helena:active {
+    transform: scale(0.98);
+}
+
+.text-gold {
+    color: var(--helena-gold);
+}
+
+.text-pink {
+    color: var(--helena-pink);
+}
+
+.border-pink {
+    border-color: var(--helena-pink);
+}
+
+/* Section headings */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--helena-gold);
+    text-shadow: 0 0 20px rgba(255, 20, 147, 0.2);
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hero section */
+.hero-decorative {
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-decorative:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-decorative:nth-child(2) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+/* Contact section styling */
+.contact-info-box {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.contact-info-box:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.contact-info-box:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.contact-info-box:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.contact-info-box:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.why-choose {
+    animation: slideInRight 0.8s ease-out;
+    background-color: rgba(255, 20, 147, 0.08);
+    border-left: 4px solid var(--helena-pink);
+}
+
+/* Scroll reveal elements */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Social link animation */
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--helena-pink);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(26, 15, 21, 0.8);
+    border-top: 1px solid rgba(255, 20, 147, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .helena-text {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .neon-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    nav .hidden {
+        display: none;
+    }
+}
+
+/* Smooth page transitions */
+body.page-load {
+    animation: pageEnter 0.5s ease-out;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Loading animation for form */
+.form-submit-loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.form-submit-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 20, 147, 0.3);
+    border-top-color: var(--helena-pink);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
