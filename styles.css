@@ -57,6 +57,29 @@ html {
     animation: fadeInDown 1s ease-out;
 }
 
+/* Hero Logo Container */
+.hero-logo-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-logo-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.4));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-logo-image:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px rgba(255, 20, 147, 0.6));
+}
+
 /* Neon circle */
 .neon-circle {
     width: 80px;
@@ -515,5 +538,90 @@ body.page-load {
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 1;
+    cursor: pointer;
+    group: gallery;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.1), rgba(196, 0, 76, 0.05));
+    border: 1px solid rgba(255, 20, 147, 0.2);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.8), rgba(196, 0, 76, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--helena-cream);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Responsive gallery */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05) translateY(-4px);
+    }
+
+    .gallery-overlay {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-showcase {
+        max-width: 100%;
     }
 }
